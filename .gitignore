@@ -1,0 +1,4 @@
+.idea
+.gradle
+application-oauth.properties
+application-real-db.properties
