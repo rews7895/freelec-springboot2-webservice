@@ -21,6 +21,7 @@ public class PostsService {
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
+
         return postsRepository.save(requestDto.toEntity()).getId();
     }
 
@@ -34,6 +35,7 @@ public class PostsService {
     }
 
     public PostsResponseDto findById(Long id) {
+
         Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
 
         return new PostsResponseDto(entity);
@@ -41,11 +43,13 @@ public class PostsService {
 
     @Transactional(readOnly = true)
     public List<PostsListResponseDto> findAllDesc() {
+
         return postsRepository.findALLDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
     }
 
     @Transactional
     public void delete (Long id) {
+
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
         postsRepository.delete(posts);
