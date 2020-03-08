@@ -1,0 +1,5 @@
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=jdbc:mariadb://rds엔드포인트:3306/db명
+spring.datasource.username=DB_ID
+spring.datasource.password=DB_PASSWORD
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
